@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080
 
-// app.use(requireHTTPS);
+app.use(requireHTTPS);
 app.use(express.static('./dist/todo-deployment'));
 app.get('/*', (req,res) => res.sendFile('index.html', {root: 'dist/todo-deployment/'}));
 app.listen(port, () => {
